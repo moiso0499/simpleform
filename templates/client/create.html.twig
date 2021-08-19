@@ -1,0 +1,26 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <div class="column text-center">
+        <div class="card">
+        <h5 class="card-title">Registro de cliente</h5>
+            <div class="card-body">
+                {{ form(form) }}
+            </div>
+        </div>
+        <div class="card">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+         <div class="card">
+        {% for message in app.flashes('danger') %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
